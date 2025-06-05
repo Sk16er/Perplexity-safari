@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>Perplexity Redirect</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.PerplexitySafariApp.PerplexitySafariExtension</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>NSExtension</key>
+    <dict>
+        <key>NSExtensionAttributes</key>
+        <dict>
+            <key>SFSafariWebsiteAccess</key>
+            <dict>
+                <key>Allowed</key>
+                <array>
+                    <string>https://www.google.com/*</string>
+                </array>
+            </dict>
+        </dict>
+        <key>NSExtensionPointIdentifier</key>
+        <string>com.apple.Safari.extension</string>
+    </dict>
+    <key>SFSafariContentScript</key>
+    <array>
+        <dict>
+            <key>Script</key>
+            <string>redirect.js</string>
+            <key>Matches</key>
+            <array>
+                <string>https://www.google.com/search*</string>
+            </array>
+            <key>RunAt</key>
+            <string>document_start</string>
+        </dict>
+    </array>
+</dict>
+</plist>
